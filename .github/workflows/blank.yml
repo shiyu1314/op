@@ -1,0 +1,23 @@
+name: My CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 检出当前代码
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # 调用私有库中的 Actions
+      - name: Run private action from another repo
+        uses: shiyu1314/https://github.com/shiyu1314/.github/actions/openwrt@6.1
+        with:
+          some-input: value
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
