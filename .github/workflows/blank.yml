@@ -14,7 +14,7 @@ jobs:
 
       # 调用私有库中的 Actions
       - name: Run private action from another repo
-        uses: shiyu1314/https://github.com/shiyu1314/.github/actions/openwrt@6.1
+        uses: shiyu1314/openwrt-onecloud/.github/actions/openwrt@6.1
         with:
           some-input: value
         env:
